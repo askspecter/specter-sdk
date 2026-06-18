@@ -1,0 +1,47 @@
+{
+  "name": "@askspecter/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for the SPECTER Agent Reputation Protocol — Know Your Agent (KYA)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run typecheck && npm run test"
+  },
+  "keywords": ["specter", "kya", "know-your-agent", "reputation", "erc-8004", "blockchain", "ai-agents", "base"],
+  "license": "MIT",
+  "homepage": "https://askspecter.lol",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/askspecter/specter-sdk.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.0",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
